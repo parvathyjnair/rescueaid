@@ -20,6 +20,7 @@ const AlertSosComponent: React.FC<AlertProps> = ({ alert }) => {
       return (
         <div style={{ transform: "translate(1%, -15%)" }}>
           <div id="tick-container">
+            
             <div id="tick-circle" style={{ animationDelay: "0s" }}></div>
             <div id="tick-circle" style={{ animationDelay: ".3s" }}></div>
             <div id="tick-circle" style={{ animationDelay: ".8s" }}></div>
