@@ -3,8 +3,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 10%;
-  }
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 .container strong {
   font-size: 20px;
@@ -20,22 +21,4 @@
 
 .container a {
   text-decoration: none;
-}
-
-ion-badge {
-  transform: translate(-1px,-9px);
-  font-size: small;
-}
-
-ion-item {
-  cursor: pointer;
-}
-
-.my-custom-class .confirm-button {
-  color:#eb445a;
-}
-.my-custom-class .secondary {
-  background-color: #3880ff;
-  color: #ffff;
-  border-radius: 5px;
 }
