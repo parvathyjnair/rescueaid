@@ -83,20 +83,7 @@ const Activity: React.FC = () => {
     // };
   }, []);
 
-  const readActivity = async (q: any) => {
-    const querySnapshot = await getDocs(q);
-    const listOfMessages: Array<any> = [];
-    querySnapshot.forEach((doc: any) => {
-      let q = {};
-      q = {
-        ...doc.data(),
-        id: doc.id,
-      };
-      listOfMessages.push(q);
-    });
-    setActivities(listOfMessages);
-    localStorage.setItem("app-activities", JSON.stringify(listOfMessages));
-  };
+ 
 
   const deleteActivity = async (val: any) => {
     const q = await query(
