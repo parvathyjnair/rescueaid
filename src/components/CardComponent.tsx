@@ -64,29 +64,7 @@ const CardComponent: React.FC<CardProps> = ({
   };
 
   return (
-    <IonCard className="custom-card">
-      <IonCardHeader style={{ display: "flex" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            flexGrow: "2",
-          }}
-        >
-          <IonCardSubtitle>{formatDate()}</IonCardSubtitle>
-          <IonCardTitle>{contactName}</IonCardTitle>
-        </div>
-        <div style={{ justifyContent: "flex-end" }}>
-          <b>{formatTime()}</b>
-        </div>
-      </IonCardHeader>
-
-      <IonCardContent
-        style={{
-          display: "flex",
-        }}
-      >
+    
         <div
           style={{
             display: "flex",
