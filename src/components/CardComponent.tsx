@@ -87,25 +87,7 @@ const CardComponent: React.FC<CardProps> = ({
             justifySelf: "flex-end",
           }}
         >
-          <IonButton color="tertiary" fill="clear">
-            <IonIcon icon={shareSocialOutline} />
-          </IonButton>
-
-          <IonButton color="danger" fill="clear" onClick={() => onDelete()}>
-            <IonIcon icon={trashBinOutline} />
-          </IonButton>
-        </div>
-      </IonCardContent>
-      <IonButton
-        color={status === "active" ? "tertiary" : "medium"}
-        expand="block"
-        fill="solid"
-        shape="round"
-        onClick={locatePersonOnMap}
-        //href={`https://www.google.com/maps/@${placeofIncidence.latitude},${placeofIncidence.longitude}`}
-      >
-        Locate
-      </IonButton>
+          
     </IonCard>
   );
 };
