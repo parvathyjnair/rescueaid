@@ -64,7 +64,29 @@ const CardComponent: React.FC<CardProps> = ({
   };
 
   return (
-    
+    <IonCard className="custom-card">
+      <IonCardHeader style={{ display: "flex" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            flexGrow: "2",
+          }}
+        >
+          <IonCardSubtitle>{formatDate()}</IonCardSubtitle>
+          <IonCardTitle>{contactName}</IonCardTitle>
+        </div>
+        <div style={{ justifyContent: "flex-end" }}>
+          <b>{formatTime()}</b>
+        </div>
+      </IonCardHeader>
+
+      <IonCardContent
+        style={{
+          display: "flex",
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -87,7 +109,25 @@ const CardComponent: React.FC<CardProps> = ({
             justifySelf: "flex-end",
           }}
         >
-          
+          <IonButton color="tertiary" fill="clear">
+            <IonIcon icon={shareSocialOutline} />
+          </IonButton>
+
+          <IonButton color="danger" fill="clear" onClick={() => onDelete()}>
+            <IonIcon icon={trashBinOutline} />
+          </IonButton>
+        </div>
+      </IonCardContent>
+      <IonButton
+        color={status === "active" ? "tertiary" : "medium"}
+        expand="block"
+        fill="solid"
+        shape="round"
+        onClick={locatePersonOnMap}
+        //href={`https://www.google.com/maps/@${placeofIncidence.latitude},${placeofIncidence.longitude}`}
+      >
+        Locate
+      </IonButton>
     </IonCard>
   );
 };
