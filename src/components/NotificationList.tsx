@@ -25,33 +25,37 @@ const NotificationList: React.FC<NotificationProps> = ({
   exitModal,
 }) => {
   return (
-    <IonPage id="notification-list-page">
+    <IonPage>
       <IonHeader>
-        <IonToolbar color="primary">
+        <IonToolbar>
           <IonButtons slot="start">
-            <IonButton onClick={exitModal}>
-              <IonIcon icon={closeOutline} slot="icon-only" />
+            <IonButton slot="start" onClick={() => exitModal()}>
+              <IonIcon slot="icon-only" icon={closeOutline} />
             </IonButton>
           </IonButtons>
-          <IonTitle>Notifications</IonTitle>
+          <IonTitle>Contacts</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
-        {notifications.length > 0 ? (
-          <IonList lines="full">
-            {notifications.map((notification, index) => (
-              <IonItem key={index}>
+      <IonContent>
+        {notifications.length !== 0 && (
+          <IonList>
+            {notifications.map((notif: any) => (
+              <IonItem key={notif.id}>
                 <IonLabel>
-                  <h2>{notification.title}</h2>
-                  <p>{notification.message}</p>
+                  <IonText>
+                    <h3 className="notif-title">{notif.title}</h3>
+                  </IonText>
+                  <p>{notif.body}</p>
+                  {notif.type === "foreground" && (
+                    <p>This data was received in foreground</p>
+                  )}
+                  {notif.type === "action" && (
+                    <p>This data was received on tap</p>
+                  )}
                 </IonLabel>
               </IonItem>
             ))}
           </IonList>
-        ) : (
-          <div style={{ textAlign: "center", marginTop: "20px" }}>
-            <h2>No notifications available</h2>
-          </div>
         )}
       </IonContent>
     </IonPage>
