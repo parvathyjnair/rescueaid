@@ -17,8 +17,11 @@ const ToastComponent: React.FC<ToastProps> = ({
       isOpen={showToast}
       onDidDismiss={onDismiss}
       message={message}
-      duration={1000}
+      duration={3000}
+      color="dark"
       icon={infoIcon}
+      cssClass="toast"
+      position="top"
     />
   );
 };
